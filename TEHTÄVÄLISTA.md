@@ -37,34 +37,34 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
 ## EPIC 2 — Backend (in-memory)
 
 ### T-05 · Middleware ⚠️ T-02
-- [ ] Luo `middleware/errorHandler.ts` — globaali Express-virheenkäsittelijä
+- [x] Luo `middleware/errorHandler.ts` — globaali Express-virheenkäsittelijä
   - Zod-virheet → 400 + `{ error, details }`
   - Muut virheet → 500 + `{ error: 'Palvelinvirhe' }`
-- [ ] Luo `middleware/validateRequest.ts` — Zod-skeema `CreateOrderSchema`
+- [x] Luo `middleware/validateRequest.ts` — Zod-skeema `CreateOrderSchema`
   - Validoi `items[].color` (hex-regex), `items[].text` (max 20), `items[].quantity` (int ≥ 1)
   - Validoi `customerInfo.name` ja `customerInfo.address`
 
 ### T-06 · Repository-rajapinta ja in-memory-toteutus ⚠️ T-04
-- [ ] Luo `repositories/IOrderRepository.ts` — rajapinta metodeilla `createOrder` ja `getOrderById`
-- [ ] Luo `repositories/InMemoryOrderRepository.ts`
+- [x] Luo `repositories/IOrderRepository.ts` — rajapinta metodeilla `createOrder` ja `getOrderById`
+- [x] Luo `repositories/InMemoryOrderRepository.ts`
   - Sisäinen `Map<string, Order>` -varasto
   - `createOrder`: generoi UUID, aseta `createdAt` ja `status: 'pending'`, tallenna Map:iin
   - `getOrderById`: hae Map:sta, palauta `null` jos ei löydy
 
 ### T-07 · Service-kerros ⚠️ T-06
-- [ ] Luo `services/orderService.ts`
-- [ ] Toteuta `calculateTotalPrice(items)` — `quantity × UNIT_PRICE (10.00)` per rivi, summa yhteen
-- [ ] Toteuta `createOrder(data, repository)` — kutsu `calculateTotalPrice`, kutsu `repository.createOrder`
-- [ ] Toteuta `getOrderById(id, repository)` — kutsu `repository.getOrderById`, heitä virhe jos `null`
+- [x] Luo `services/orderService.ts`
+- [x] Toteuta `calculateTotalPrice(items)` — `quantity × UNIT_PRICE (10.00)` per rivi, summa yhteen
+- [x] Toteuta `createOrder(data, repository)` — kutsu `calculateTotalPrice`, kutsu `repository.createOrder`
+- [x] Toteuta `getOrderById(id, repository)` — kutsu `repository.getOrderById`, heitä virhe jos `null`
 
 ### T-08 · Controller ⚠️ T-05, T-07
-- [ ] Luo `controllers/orderController.ts`
-- [ ] Toteuta `createOrder`: pura `req.body`, kutsu service, palauta `201 + order`
-- [ ] Toteuta `getOrderById`: pura `req.params.id`, kutsu service, palauta `200 + order` tai `404`
+- [x] Luo `controllers/orderController.ts`
+- [x] Toteuta `createOrder`: pura `req.body`, kutsu service, palauta `201 + order`
+- [x] Toteuta `getOrderById`: pura `req.params.id`, kutsu service, palauta `200 + order` tai `404`
 
 ### T-09 · Reititys ja app.ts ⚠️ T-08
-- [ ] Luo `routes/orderRoutes.ts` — rekisteröi `POST /api/orders` ja `GET /api/orders/:id`
-- [ ] Luo `app.ts`:
+- [x] Luo `routes/orderRoutes.ts` — rekisteröi `POST /api/orders` ja `GET /api/orders/:id`
+- [x] Luo `app.ts`:
   - Konfiguroi `cors()`, `express.json()`
   - Rekisteröi `orderRoutes`
   - Lisää `GET /api/health` → `{ status: 'ok' }`
@@ -73,12 +73,12 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
   - Injektoi `InMemoryOrderRepository` controllerille (tai servicelle)
 
 ### T-10 · Manuaalinen API-testaus ⚠️ T-09
-- [ ] Käynnistä backend: `npm run dev`
-- [ ] Testaa `GET /api/health` → `{ status: 'ok' }`
-- [ ] Testaa `POST /api/orders` validilla datalla → 201 + tilausobjekti UUID:lla
-- [ ] Testaa `POST /api/orders` virheellisellä datalla (tyhjä teksti, liian pitkä teksti) → 400
-- [ ] Testaa `GET /api/orders/:id` olemassaolevalla ID:llä → 200
-- [ ] Testaa `GET /api/orders/:id` tuntemattomalla ID:llä → 404
+- [x] Käynnistä backend: `npm run dev`
+- [x] Testaa `GET /api/health` → `{ status: 'ok' }`
+- [x] Testaa `POST /api/orders` validilla datalla → 201 + tilausobjekti UUID:lla
+- [x] Testaa `POST /api/orders` virheellisellä datalla (tyhjä teksti, liian pitkä teksti) → 400
+- [x] Testaa `GET /api/orders/:id` olemassaolevalla ID:llä → 200
+- [x] Testaa `GET /api/orders/:id` tuntemattomalla ID:llä → 404
 
 ---
 
