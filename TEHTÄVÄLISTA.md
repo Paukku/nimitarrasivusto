@@ -85,29 +85,29 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
 ## EPIC 3 — Frontend: yhteiset osat
 
 ### T-11 · Vakiot ja tyypit ⚠️ T-04
-- [ ] Luo `constants/index.ts`:
+- [x] Luo `constants/index.ts`:
   - `LABEL_COLORS` — 8 väriä nimineen ja hex-koodeineen
   - `UNIT_PRICE = 10.00`
   - `UNITS_PER_BATCH = 120`
   - `MAX_TEXT_LENGTH = 20`
-- [ ] Luo `api/orders.ts` — fetch-wrapperi-funktiot `createOrder(payload)` ja `getOrder(id)`
+- [x] Luo `api/orders.ts` — fetch-wrapperi-funktiot `createOrder(payload)` ja `getOrder(id)`
 
 ### T-12 · Reititys ja App.tsx ⚠️ T-03, T-11
-- [ ] Konfiguroi `react-router-dom` `App.tsx`:ssä
-- [ ] Määrittele reitit: `/` (EditorPage), `/cart` (CartPage), `/checkout` (CheckoutPage), `/confirmation/:orderId` (ConfirmationPage)
-- [ ] Lisää `QueryClientProvider` React Querya varten
+- [x] Konfiguroi `react-router-dom` `App.tsx`:ssä
+- [x] Määrittele reitit: `/` (EditorPage), `/cart` (CartPage), `/checkout` (CheckoutPage), `/confirmation/:orderId` (ConfirmationPage)
+- [x] Lisää `QueryClientProvider` React Querya varten
 
 ### T-13 · `useCart`-hook ⚠️ T-04
-- [ ] Luo `hooks/useCart.ts`
-- [ ] Toteuta `useState` lazy initializer, joka lukee `nimitarra_cart` localStoragesta
-- [ ] `try/catch` korruptoituneelle datalle → palauta `[]`
-- [ ] Toteuta `persist(next)` — päivittää sekä staten että localStoragen
-- [ ] Toteuta `addItem`, `removeItem`, `updateQuantity`, `clearCart` käyttäen `persist`
+- [x] Luo `hooks/useCart.ts`
+- [x] Toteuta `useState` lazy initializer, joka lukee `nimitarra_cart` localStoragesta
+- [x] `try/catch` korruptoituneelle datalle → palauta `[]`
+- [x] Toteuta `persist(next)` — päivittää sekä staten että localStoragen
+- [x] Toteuta `addItem`, `removeItem`, `updateQuantity`, `clearCart` käyttäen `persist`
 
 ### T-14 · `useOrders`-hook ⚠️ T-11, T-13
-- [ ] Luo `hooks/useOrders.ts`
-- [ ] Toteuta `useCreateOrder()` — `useMutation` kutsuu `api/orders.createOrder`
-- [ ] Toteuta `useGetOrder(id)` — `useQuery` kutsuu `api/orders.getOrder`
+- [x] Luo `hooks/useOrders.ts`
+- [x] Toteuta `useCreateOrder()` — `useMutation` kutsuu `api/orders.createOrder`
+- [x] Toteuta `useGetOrder(id)` — `useQuery` kutsuu `api/orders.getOrder`
 
 ---
 
