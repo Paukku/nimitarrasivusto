@@ -114,34 +114,34 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
 ## EPIC 4 — Frontend: komponentit
 
 ### T-15 · `LabelPreview`-komponentti ⚠️ T-11
-- [ ] Luo `components/LabelPreview/LabelPreview.tsx`
-- [ ] Props: `color: string`, `text: string`
-- [ ] Kiinteä leveys 231 px, korkeus lasketaan kuvasuhteesta `3/1.3` (~100 px)
-- [ ] Toteuta `calcFontSize(text, width)` — laskee fonttikoon tekstin pituuden ja containerleveyden perusteella (min 10, max 32)
-- [ ] Toteuta `getContrastColor(hex)` — palauttaa `#000` tai `#fff` taustavärin luminanssin mukaan
-- [ ] Tyylit: `border-radius: 8px`, `overflow: hidden`, `padding: 0 12px`, teksti `white-space: nowrap`
+- [x] Luo `components/LabelPreview/LabelPreview.tsx`
+- [x] Props: `color: string`, `text: string`
+- [x] Kiinteä leveys 231 px, korkeus lasketaan kuvasuhteesta `3/1.3` (~100 px)
+- [x] Toteuta `calcFontSize(text, width)` — laskee fonttikoon tekstin pituuden ja containerleveyden perusteella (min 10, max 32)
+- [x] Toteuta `getContrastColor(hex)` — palauttaa `#000` tai `#fff` taustavärin luminanssin mukaan
+- [x] Tyylit: `border-radius: 8px`, `overflow: hidden`, `padding: 0 12px`, teksti `white-space: nowrap`
 
 ### T-16 · `ColorPicker`-komponentti ⚠️ T-11, T-15
-- [ ] Luo `components/ColorPicker/ColorPicker.tsx`
-- [ ] Props: `selectedColor: string`, `onChange: (hex: string) => void`
-- [ ] Renderöi `LABEL_COLORS`-vakion värit ruudukkona (esim. 4 × 2)
-- [ ] Valitun värin ympärille reunus/korostus
-- [ ] Jokainen ruutu on klikattava, kutsuu `onChange(hex)`
+- [x] Luo `components/ColorPicker/ColorPicker.tsx`
+- [x] Props: `selectedColor: string`, `onChange: (hex: string) => void`
+- [x] Renderöi `LABEL_COLORS`-vakion värit ruudukkona (esim. 4 × 2)
+- [x] Valitun värin ympärille reunus/korostus
+- [x] Jokainen ruutu on klikattava, kutsuu `onChange(hex)`
 
 ### T-17 · `TextInput`-komponentti ⚠️ T-11
-- [ ] Luo `components/TextInput/TextInput.tsx`
-- [ ] Props: `value: string`, `onChange: (val: string) => void`, `error?: string`
-- [ ] Syötteen pituus rajoitettu `MAX_TEXT_LENGTH` (20) merkkiin (`maxLength`-attribuutti + validointi)
-- [ ] Näytä merkkimäärälaskuri: `{value.length}/{MAX_TEXT_LENGTH}`
-- [ ] Näytä `error`-prop kentän alla punaisella tekstillä jos annettu
+- [x] Luo `components/TextInput/TextInput.tsx`
+- [x] Props: `value: string`, `onChange: (val: string) => void`, `error?: string`
+- [x] Syötteen pituus rajoitettu `MAX_TEXT_LENGTH` (20) merkkiin (`maxLength`-attribuutti + validointi)
+- [x] Näytä merkkimäärälaskuri: `{value.length}/{MAX_TEXT_LENGTH}`
+- [x] Näytä `error`-prop kentän alla punaisella tekstillä jos annettu
 
 ### T-18 · `CartItem`-komponentti ⚠️ T-15
-- [ ] Luo `components/CartItem/CartItem.tsx`
-- [ ] Props: `item: CartItem`, `onRemove: (id) => void`, `onQuantityChange: (id, qty) => void`
-- [ ] Näytä pieni `LabelPreview` (voidaan skaalata CSS `transform: scale()`)
-- [ ] Näytä teksti, väri hex, kappalemäärä × 120 kpl
-- [ ] Poistopainike kutsuu `onRemove`
-- [ ] Määrän muutos (+ / − tai numerokenttä) kutsuu `onQuantityChange`
+- [x] Luo `components/CartItem/CartItem.tsx`
+- [x] Props: `item: CartItem`, `onRemove: (id) => void`, `onQuantityChange: (id, qty) => void`
+- [x] Näytä pieni `LabelPreview` (voidaan skaalata CSS `transform: scale()`)
+- [x] Näytä teksti, väri hex, kappalemäärä × 120 kpl
+- [x] Poistopainike kutsuu `onRemove`
+- [x] Määrän muutos (+ / − tai numerokenttä) kutsuu `onQuantityChange`
 
 ---
 
