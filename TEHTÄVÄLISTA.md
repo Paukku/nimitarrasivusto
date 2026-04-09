@@ -148,39 +148,39 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
 ## EPIC 5 — Frontend: sivut
 
 ### T-19 · `EditorPage` ⚠️ T-13, T-15, T-16, T-17
-- [ ] Luo `pages/EditorPage/EditorPage.tsx`
-- [ ] Paikallinen tila: `selectedColor` (oletuksena ensimmäinen väri), `text` (oletuksena `''`)
-- [ ] Renderöi `ColorPicker`, `TextInput`, `LabelPreview` rinnakkain tai allekkain
-- [ ] Validointi "Lisää koriin" -napin klikkauksessa: teksti ei tyhjä
-- [ ] Onnistunut validointi: `useCart.addItem({ id: uuid(), color, text, quantity: 1 })`
-- [ ] Lisäyksen jälkeen nollaa `text`-tila, näytä lyhyt vahvistusviesti ("Lisätty ostoskoriin!")
-- [ ] Linkki ostoskoriin (`/cart`)
+- [x] Luo `pages/EditorPage/EditorPage.tsx`
+- [x] Paikallinen tila: `selectedColor` (oletuksena ensimmäinen väri), `text` (oletuksena `''`)
+- [x] Renderöi `ColorPicker`, `TextInput`, `LabelPreview` rinnakkain tai allekkain
+- [x] Validointi "Lisää koriin" -napin klikkauksessa: teksti ei tyhjä
+- [x] Onnistunut validointi: `useCart.addItem({ id: uuid(), color, text, quantity: 1 })`
+- [x] Lisäyksen jälkeen nollaa `text`-tila, näytä lyhyt vahvistusviesti ("Lisätty ostoskoriin!")
+- [x] Linkki ostoskoriin (`/cart`)
 
 ### T-20 · `CartPage` ⚠️ T-13, T-18
-- [ ] Luo `pages/CartPage/CartPage.tsx`
-- [ ] Hae ostoskorin sisältö `useCart`-hookista
-- [ ] Jos kori tyhjä, näytä viesti ja linkki takaisin muokkausnäkymään
-- [ ] Renderöi lista `CartItem`-komponentteja
-- [ ] Laske ja näytä yhteissumma: `items.reduce((sum, i) => sum + i.quantity * UNIT_PRICE, 0)` €
-- [ ] "Tilaa"-painike navigoi `/checkout`-sivulle
+- [x] Luo `pages/CartPage/CartPage.tsx`
+- [x] Hae ostoskorin sisältö `useCart`-hookista
+- [x] Jos kori tyhjä, näytä viesti ja linkki takaisin muokkausnäkymään
+- [x] Renderöi lista `CartItem`-komponentteja
+- [x] Laske ja näytä yhteissumma: `items.reduce((sum, i) => sum + i.quantity * UNIT_PRICE, 0)` €
+- [x] "Tilaa"-painike navigoi `/checkout`-sivulle
 
 ### T-21 · `CheckoutPage` ⚠️ T-14, T-20
-- [ ] Luo `pages/CheckoutPage/CheckoutPage.tsx`
-- [ ] Paikallinen tila: `name`, `address`, validointivirheet
-- [ ] Renderöi lomake: nimi-kenttä, osoite-kenttä
-- [ ] Validointi lähetyksessä: molemmat kentät täytettyjä
-- [ ] `useCreateOrder().mutate({ items: cart.items, customerInfo: { name, address } })`
-- [ ] Latauksen aikana: poista "Vahvista"-painike käytöstä, näytä spinner
-- [ ] `onSuccess`: kutsu `clearCart()`, navigoi `/confirmation/:orderId`
-- [ ] `onError`: näytä virheilmoitus lomakkeen alla
+- [x] Luo `pages/CheckoutPage/CheckoutPage.tsx`
+- [x] Paikallinen tila: `name`, `address`, validointivirheet
+- [x] Renderöi lomake: nimi-kenttä, osoite-kenttä
+- [x] Validointi lähetyksessä: molemmat kentät täytettyjä
+- [x] `useCreateOrder().mutate({ items: cart.items, customerInfo: { name, address } })`
+- [x] Latauksen aikana: poista "Vahvista"-painike käytöstä, näytä spinner
+- [x] `onSuccess`: kutsu `clearCart()`, navigoi `/confirmation/:orderId`
+- [x] `onError`: näytä virheilmoitus lomakkeen alla
 
 ### T-22 · `ConfirmationPage` ⚠️ T-14, T-21
-- [ ] Luo `pages/ConfirmationPage/ConfirmationPage.tsx`
-- [ ] Lue `orderId` URL-parametrista (`useParams`)
-- [ ] `useGetOrder(orderId)` hakee tilauksen tiedot backendistä
-- [ ] Latauksen aikana: näytä spinner
-- [ ] Onnistuneesti: näytä tilausnumero, yhteenveto (tuotteet, yhteissumma, toimitusosoite), kiitosviesti
-- [ ] Virhetilanteessa: näytä virheilmoitus
+- [x] Luo `pages/ConfirmationPage/ConfirmationPage.tsx`
+- [x] Lue `orderId` URL-parametrista (`useParams`)
+- [x] `useGetOrder(orderId)` hakee tilauksen tiedot backendistä
+- [x] Latauksen aikana: näytä spinner
+- [x] Onnistuneesti: näytä tilausnumero, yhteenveto (tuotteet, yhteissumma, toimitusosoite), kiitosviesti
+- [x] Virhetilanteessa: näytä virheilmoitus
 
 ---
 
