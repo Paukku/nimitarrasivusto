@@ -187,13 +187,13 @@ Merkinnät: `[ ]` = tekemättä · `[x]` = valmis · ⚠️ = riippuvuus edellis
 ## EPIC 6 — Integraatiotestaus (end-to-end)
 
 ### T-23 · Koko tilauspolun testaus ⚠️ kaikki edeltävät
-- [ ] Käynnistä backend ja frontend samanaikaisesti
-- [ ] Muokkausnäkymä: valitse väri, kirjoita teksti, lisää koriin — tarkista localStorage
-- [ ] Ostoskorinäkymä: tarkista tuote näkyy oikein, muuta määrä, poista tuote
-- [ ] Checkout: täytä yhteystiedot, lähetä tilaus — tarkista backend tallentaa
-- [ ] Vahvistussivu: tarkista tilausnumero ja yhteenveto näkyvät
-- [ ] Päivitä sivu — tarkista localStorage-ostoskori säilyy
-- [ ] Virhekäsittely: kokeile lähettää tyhjä lomake, yli 20 merkin teksti
+- [x] Käynnistä backend ja frontend samanaikaisesti
+- [x] Muokkausnäkymä: valitse väri, kirjoita teksti, lisää koriin — tarkista localStorage
+- [x] Ostoskorinäkymä: tarkista tuote näkyy oikein, muuta määrä, poista tuote
+- [x] Checkout: täytä yhteystiedot, lähetä tilaus — tarkista backend tallentaa
+- [x] Vahvistussivu: tarkista tilausnumero ja yhteenveto näkyvät
+- [x] Päivitä sivu — tarkista localStorage-ostoskori säilyy
+- [x] Virhekäsittely: kokeile lähettää tyhjä lomake, yli 20 merkin teksti
 
 ---
 
